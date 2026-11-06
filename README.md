@@ -1,4 +1,8 @@
-# astrbot_plugin_breeze_tts
+<p align="center">
+  <img src="logo.png" width="120" alt="Breeze Blue TTS">
+</p>
+
+<h1 align="center">astrbot_plugin_breeze_tts</h1>
 
 接入 [Breeze Blue](https://breezeblue.ai) 语音合成的 AstrBot 插件，可直接作为
 [private_companion](https://github.com/menglimi/astrbot_plugin_private_companion)
