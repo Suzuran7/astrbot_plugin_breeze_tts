@@ -1,0 +1,10 @@
+name: astrbot_plugin_breeze_tts
+display_name: Breeze Blue 语音合成
+short_desc: 接入 Breeze Blue TTS，可作为 private_companion 的语音后端
+desc: 对接 Breeze Blue（api.breeze.blue），支持克隆音色与自然语言风格指令（instructions）。暴露 synthesize_text 供 private_companion 的 MiMo Voice Clone 后端调用，也可通过 breeze_tts_speak 工具或 /breeze 命令直接使用。
+help: /breeze 要朗读的文字 手动测试；把 private_companion 的 tts_synthesis_backend 设为 mimo_voice_clone、tts_mimo_tool_name 设为 breeze_tts_speak 即可接入。
+version: 1.0.0
+author: local
+astrbot_version: ">=4.16,<5"
+support_platforms:
+  - aiocqhttp

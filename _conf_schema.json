@@ -1,0 +1,58 @@
+{
+  "api_key": {
+    "description": "Breeze API Key",
+    "type": "string",
+    "hint": "在 breezeblue.ai 的 API keys 页面创建，形如 brz_xxx。请勿提交到公开仓库。",
+    "default": ""
+  },
+  "default_voice_id": {
+    "description": "默认音色 ID",
+    "type": "string",
+    "hint": "形如 voc_xxxxxxxxxxxx。可先调用 GET /v1/voices 获取自己的音色列表。",
+    "default": ""
+  },
+  "voice_map": {
+    "description": "音色名称映射",
+    "type": "dict",
+    "hint": "建立「名称 → 音色 ID」的映射，例如 {\"旁白\": \"voc_xxx\"}。配置后可按名称引用音色，无需联网查询。",
+    "default": {}
+  },
+  "model_id": {
+    "description": "模型",
+    "type": "string",
+    "hint": "breeze-tts-2（中/英）或 breeze-tts-2-multilingual（多语种）",
+    "default": "breeze-tts-2"
+  },
+  "instructions": {
+    "description": "默认风格指令",
+    "type": "text",
+    "hint": "自然语言描述语气，例如「语气轻软、语速稍慢」。private_companion 的 tts_mimo_style_prompt 会覆盖此项。",
+    "default": ""
+  },
+  "guidance_scale": {
+    "description": "风格强度",
+    "type": "float",
+    "hint": "越高越贴近 instructions，过高可能失真，建议 3-5",
+    "default": 4.0
+  },
+  "timeout": {
+    "description": "合成超时（秒）",
+    "type": "int",
+    "hint": "Breeze 首字节延迟可能较长，不要设太小",
+    "default": 120,
+    "slider": { "min": 20, "max": 300, "step": 10 }
+  },
+  "max_chars": {
+    "description": "单次合成最大字符数",
+    "type": "int",
+    "default": 300,
+    "slider": { "min": 20, "max": 1000, "step": 10 }
+  },
+  "voice_cache_ttl": {
+    "description": "音色列表缓存时长（秒）",
+    "type": "int",
+    "hint": "拉取音色列表较慢，缓存可避免每次请求都等待",
+    "default": 600,
+    "slider": { "min": 60, "max": 3600, "step": 60 }
+  }
+}

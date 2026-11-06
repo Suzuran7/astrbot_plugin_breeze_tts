@@ -1,0 +1,13 @@
+{
+  "api_key": "brz_xxxxxxxxxxxxxxxx",
+  "default_voice_id": "voc_xxxxxxxxxxxx",
+  "voice_map": {
+    "旁白": "voc_xxxxxxxxxxxx"
+  },
+  "model_id": "breeze-tts-2",
+  "instructions": "",
+  "guidance_scale": 4.0,
+  "timeout": 120,
+  "max_chars": 300,
+  "voice_cache_ttl": 600
+}
