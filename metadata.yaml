@@ -1,10 +1,31 @@
 name: astrbot_plugin_breeze_tts
 display_name: Breeze Blue 语音合成
-short_desc: 接入 Breeze Blue TTS，可作为 private_companion 的语音后端
-desc: 对接 Breeze Blue（api.breeze.blue），支持克隆音色与自然语言风格指令（instructions）。暴露 synthesize_text 供 private_companion 的 MiMo Voice Clone 后端调用，也可通过 breeze_tts_speak 工具或 /breeze 命令直接使用。
-help: /breeze 要朗读的文字 手动测试；把 private_companion 的 tts_synthesis_backend 设为 mimo_voice_clone、tts_mimo_tool_name 设为 breeze_tts_speak 即可接入。
+short_desc: 接入 Breeze Blue TTS，让 Bot 用克隆音色说话，可作为陪伴插件的语音后端
+desc: |
+  对接 Breeze Blue 语音合成服务，支持克隆音色与自然语言风格指令（instructions）。
+
+  两种用法：
+  1. 独立使用：模型可调用 `breeze_tts_speak` 工具把一句话合成语音发出，也可以用 `/breeze 文字` 手动测试。
+  2. 作为 private_companion（我会永远陪着你）的语音后端：插件实现了该插件 MiMo Voice Clone 后端要求的 `synthesize_text()` 接口，配置三项即可被自动发现，让角色用自己的声音说话。
+
+  特性：
+  - 支持声线克隆，可为不同角色绑定不同音色（`voice_map` 名称映射）
+  - 支持 `instructions` 自然语言控制语气，如「语气轻软、语速稍慢」
+  - 音色列表本地缓存，避免每次合成前联网查询
+  - 音频自动落盘并定期清理
+help: /breeze 要朗读的文字 手动测试；接入 private_companion 时把 tts_synthesis_backend 设为 mimo_voice_clone、tts_mimo_tool_name 设为 breeze_tts_speak。
 version: 1.0.0
-author: local
+author: ZFL
+repo: https://github.com/Suzuran7/astrbot_plugin_breeze_tts
 astrbot_version: ">=4.16,<5"
 support_platforms:
   - aiocqhttp
+  - qq_official
+social_link: https://github.com/Suzuran7
+tags:
+  - TTS
+  - 语音合成
+  - 语音
+  - Breeze
+  - 陪伴
+  - 音色克隆
